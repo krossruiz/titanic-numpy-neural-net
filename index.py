@@ -69,13 +69,13 @@ def formatTitanicData(raw_data):
 		formatted_training_data[name] = embarkedDummy[x];
 	formatted_training_data = formatted_training_data.drop(columns=["Embarked"]);
 
-	formatted_training_data = formatted_training_data.drop(columns=["PassengerId"]);
+	#formatted_training_data = formatted_training_data.drop(columns=["PassengerId"]);
 	return formatted_training_data;
 
 formatted_training_data = formatTitanicData(raw_training_data);
 formatted_test_data = formatTitanicData(raw_test_data);
 
-# formatted_training_data.to_csv("cleaned_titanic.csv", sep='\t');
+formatted_test_data.to_csv("cleaned_titanic_test.csv", sep='\t');
 #
 # training_data_transpose = training_data.transpose();
 # training_data_rows, training_data_columns = training_data_transpose.shape;
